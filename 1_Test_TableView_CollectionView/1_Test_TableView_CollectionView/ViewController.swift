@@ -83,6 +83,7 @@ class ViewController: UIViewController {
         
     }
     
+    // 下一頁資訊
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segue_rps_to_table" {
             let table_VC = segue.destination as! RecordTableViewController

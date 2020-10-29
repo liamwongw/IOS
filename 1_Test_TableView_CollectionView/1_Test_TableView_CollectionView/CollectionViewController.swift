@@ -41,6 +41,14 @@ class CollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
         
+        cell.backgroundColor = indexPath.row % 2 == 0 ? UIColor.orange :UIColor.brown
+        if imageWinAndLose[indexPath.row] == "平手" {
+            cell.backgroundColor = UIColor.gray
+        }else if imageWinAndLose[indexPath.row] == "輸"{
+            cell.backgroundColor = UIColor.red
+        }else{
+            cell.backgroundColor = UIColor.black
+        }
         cell.imageView.image = UIImage(named: imageWinAndLose[indexPath.row])
         // Configure the cell
         
